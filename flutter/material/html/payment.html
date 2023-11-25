@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riding App - Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://img.freepik.com/free-vector/taxi-app-concept_23-2148484534.jpg') center/cover no-repeat fixed;
+            color: black;
+            text-align: center;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 110vh;
+            margin-top: 5vh;
+        }
+
+        form {
+            background-color: white;
+            color: black;
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: left;
+        }
+
+        input {
+            display: none; /* hide the radio buttons */
+            margin-bottom: 1em;
+        }
+
+        label {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 1em;
+        }
+
+        label img {
+            width: 50px; /* adjust the size as needed */
+            height: 50px;
+            border-radius: 8px; /* add border-radius for rounded corners */
+            margin-bottom: 0.5em;
+            border: 2px solid transparent; /* add transparent border by default */
+        }
+
+        label img.selected {
+            border-color: blue; /* set border color to blue when selected */
+        }
+
+        button {
+            background-color: #333;
+            color: white;
+            padding: 0.5em 1em;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 1em;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Payment for VeloCity</h1>
+    </header>
+
+    <section>
+        
+        <form id="paymentForm" onsubmit="proceedToPayment()">
+            <h3>Estimated travel cost : Rs.127</h3>
+            <label for="gpay" onclick="selectPaymentOption('https://pay.google.com', 'gpay')">
+                <input type="radio" id="gpay" name="paymentOption" value="https://pay.google.com" required>
+                <img src="https://i.pinimg.com/736x/60/5a/bd/605abdb7af3405c6b20a426b1e128322.jpg" alt="Google Pay">
+                Google Pay
+            </label>
+
+            <label for="phonepe" onclick="selectPaymentOption('https://www.phonepe.com', 'phonepe')">
+                <input type="radio" id="phonepe" name="paymentOption" value="https://www.phonepe.com" required>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyFYvGXwnzEZ2EEwuozZk7efA8s2MBYxi1VMdpdFc&s" alt="PhonePe">
+                PhonePe
+            </label>
+
+            <label for="paytm" onclick="selectPaymentOption('https://paytm.com', 'paytm')">
+                <input type="radio" id="paytm" name="paymentOption" value="https://paytm.com" required>
+                <img src="https://1000logos.net/wp-content/uploads/2023/03/Paytm-logo.png" alt="Paytm">
+                Paytm
+            </label>
+
+            <label for="cash" onclick="selectPaymentOption('feedback.html', 'cash')">
+                <input type="radio" id="cash" name="paymentOption" value="feedback.html" required>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGkGqojd3y-uIX6KaFOAmdNYyF6ahXEmXy_w&usqp=CAU" alt="Cash">
+                Cash
+            </label>
+
+            <!-- Replace "Sign Up" with "Proceed to Payment" button -->
+            
+           <center> <button onclick="redirectToAnotherPage()">See ride details</button></center>
+        </form>
+    </section>
+    
+    
+    
+            
+            
+    <script>
+        function redirectToAnotherPage() {
+            // You can replace 'another_page.html' with the actual file name you want to navigate to.
+            window.location.href = 'driver.html';
+        }
+    
+        function proceedToPayment() {
+            // Get the selected payment option
+            const selectedOption = document.querySelector('input[name="paymentOption"]:checked');
+
+            if (selectedOption) {
+                // Redirect to the respective payment gateway or Cash
+                const paymentOption = selectedOption.value;
+
+                if (paymentOption.startsWith('http')) {
+                    // Redirect to the selected payment gateway
+                    window.location.href = paymentOption;
+                } else {
+                    alert(`You chose to pay with: ${paymentOption}`);
+                }
+            } else {
+                alert("Please select a payment option.");
+            }
+
+            // Prevent the form from submitting
+            return false;
+        }
+
+        function selectPaymentOption(option, id) {
+            // Manually select the radio button for the chosen payment option
+            const radio = document.querySelector(`input[value="${option}"]`);
+            if (radio) {
+                radio.checked = true;
+
+                // Remove the "selected" class from all images
+                document.querySelectorAll('label img').forEach(img => img.classList.remove('selected'));
+
+                // Add the "selected" class to the clicked image
+                document.getElementById(id).classList.add('selected');
+            }
+        }
+    </script>
+
+</body>
+</html>

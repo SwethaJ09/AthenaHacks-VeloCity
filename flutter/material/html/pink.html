@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pink Taxi Service</title>
+    <style>
+        body {
+            background-color: #ffc0cb; /* Pink background */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #ff69b4; /* Dark Pink header */
+            padding: 1em;
+            color: white;
+        }
+
+        section {
+            padding: 2em;
+        }
+
+         h2 {
+            color: #ff69b4; /* Dark Pink text */
+        }
+        h1 {
+            color: darkmagenta;
+        }
+
+        button {
+            background-color: #ff69b4; /* Dark Pink button */
+            color: white;
+            padding: 0.5em 1em;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #d35400; /* Slightly darker pink on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1><strong>Pink VeloCity</h1></strong>
+        <h3>Travel Safely,Boldy.</h3>
+    </header>
+
+    <section>
+        <h2>Find a Woman Driver</h2>
+        <p>Enter your location to find a woman driver:</p>
+        
+        <form id="locationForm">
+            <label for="location">Your Location:</label>
+            <input type="text" id="location" name="location" required>
+            <label for="destination">Destination</label>
+            <input type="text" id="destination" name="destination" required>
+            <br><br>
+            <button type="button" onclick="findWomanDriver()">Find Woman Driver</button>
+        </form>
+
+        <div id="driverDetails" style="display: none;">
+            <h2>Driver Details</h2>
+            <p id="driverName"></p>
+            <p id="driverGender"></p>
+            <p id="driverRating"></p>
+            <p id="driverLocation"></p>
+            <p id="timeToReach"></p>
+            <p id="Vehicleno"></p>
+
+        </div>
+    </section>
+
+    <script>
+        function findWomanDriver() {
+            // Simulate data (replace this with real functionality)
+            var driver = {
+                name: "Alice",
+                gender: "Female",
+                rating: 4.9,
+                location: "PV Street",
+                Vehicleno:"TN0678539"
+            };
+
+            var timeToReach = calculateTime(driver.location, document.getElementById("location").value);
+
+            // Display driver details
+            document.getElementById("driverName").innerText = "Name: " + driver.name;
+            document.getElementById("driverGender").innerText = "Gender: " + driver.gender;
+            document.getElementById("driverRating").innerText = "Rating: " + driver.rating;
+            document.getElementById("driverLocation").innerText = "Location: " + driver.location;
+            document.getElementById("timeToReach").innerText = "Time to Reach: " + timeToReach + "minutes";
+            document.getElementById("Vehicleno").innerText = "Vehicle Number: "+driver.Vehicleno;
+
+
+            // Show the driver details section
+            document.getElementById("driverDetails").style.display = "block";
+        }
+
+        function calculateTime(startLocation, endLocation) {
+            // Simulate time calculation (replace this with real functionality)
+            var distance = Math.abs(hashCode(startLocation) - hashCode(endLocation)) % 10;
+            var timeTaken = distance * 2; // Assuming 2 seconds per unit distance
+            return timeTaken;
+        }
+
+        // Simple hash function for demonstration purposes
+        function hashCode(str) {
+            var hash = 0, i, chr;
+            for (i = 0; i < str.length; i++) {
+                chr = str.charCodeAt(i);
+                hash = (hash << 5) - hash + chr;
+                hash |= 0; // Convert to 32bit integer
+            }
+            return hash;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ride Booking</title>
+    <style>
+       html, body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://img.freepik.com/free-vector/taxi-app-concept_23-2148484534.jpg') center/cover no-repeat fixed; /* Replace 'background_image.jpg' with your image file name */
+            color: black;
+            text-align: center;
+            overflow:hidden;
+            
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin-top: 5vh;
+        }
+
+        form {
+            background-color: white;
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: left;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 0.5em;
+            margin-bottom: 1em;
+        }
+
+        button {
+            background-color: #333;
+            color: white;
+            padding: 0.5em 1em;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Ride Booking</h1>
+    </header>
+
+    <section>
+        <form id="rideForm" onsubmit="return submitForm()" method="post">
+            <label for="source">Source:</label>
+            <input type="text" id="source" name="source" required>
+
+            <label for="destination">Destination:</label>
+            <input type="text" id="destination" name="destination" required>
+
+            <label for="vehicle">Choose a Vehicle:</label>
+            <select id="vehicle" name="vehicle" required style="margin-bottom:6vh">
+                <option value="car">-Select-</option>
+                <option value="car">Car</option>
+                <option value="auto">Auto</option>
+                <option value="bike">Bike</option>
+                <option value="pink">Pink</option>
+            </select>
+            <div class="vertical-center"></div>
+            <button type="submit" style="margin-right:12vh" id="Shortest_path">Shortest Path</button>
+            <button type="submit" id="Safest_path">Safest Path</button>
+        </form>
+    </section>
+
+    <script>
+        function submitForm() {
+            var form = document.getElementById("rideForm");
+            var vehicleSelection = document.getElementById("vehicle").value;
+
+            // Depending on the selected vehicle, update the form action
+            if (vehicleSelection === "pink") {
+                form.action = "pink.html";
+            } else if (document.activeElement.id === "Safest_path") {
+                form.action = "map_route2.html";
+            } else {
+                form.action = "map_route1.html";
+            }
+            // Continue with the form submission
+            return true;
+        }
+    </script>
+
+</body>
+</html>

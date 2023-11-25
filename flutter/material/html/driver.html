@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ride Details</title>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      max-width: 300px;
+      margin: 20px auto;
+      background-color: #a6e0e1;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .ride-info {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .ride-info h2 {
+      color: #333;
+    }
+
+    .ride-info p {
+      color: #555;
+    }
+
+    .driver-info {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      margin-top: 20px;
+    }
+
+    .driver-info img {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .driver-details {
+      text-align: center;
+    }
+
+    .driver-details p {
+      margin: 5px 0;
+      color: #666;
+    }
+
+    .rating {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .rating img {
+      width: 24px;
+      height: 24px;
+      margin-right: 5px;
+    }
+
+    .rating span {
+      color: #333;
+      font-weight: bold;
+    }
+
+    .additional-content {
+      margin-top: 20px;
+      color: #555;
+    }
+
+    .additional-content p {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="ride-info">
+      <h2>Ride Details</h2>
+      <p>From: <strong>Mylapore</strong></p>
+      <p>To: <strong>Ambattur</strong></p>
+      <p> Drop at : <strong>6:32 pm</strong></p>
+      <p> Ride duration : <strong>100 mins</strong> </p>
+
+
+    <div class="driver-info">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0TS1rQRPYGt5Tu7UG1gynoMGT6-2YZZhCWQsg-8-Xn52BtgKdocGSj_e6bxi9J5DdmGs&usqp=CAU" alt="Driver's Photo">
+      <div class="driver-details">
+        <p><strong>Driver:</strong> Leo Das</p>
+        <p><strong>Vehicle Number:</strong> TN 00 0169</p>
+      </div>
+    </div>
+
+    <div class="rating">
+      <img src="https://img.freepik.com/premium-vector/flat-golden-star-icon-universal-golden-star-icon-use-web-mobile-ui-isolated-vector-illustration_96318-19615.jpg" alt="Star">
+      <img src="https://img.freepik.com/premium-vector/flat-golden-star-icon-universal-golden-star-icon-use-web-mobile-ui-isolated-vector-illustration_96318-19615.jpg" alt="Star">
+      <img src="https://img.freepik.com/premium-vector/flat-golden-star-icon-universal-golden-star-icon-use-web-mobile-ui-isolated-vector-illustration_96318-19615.jpg" alt="Star">
+      <img src="https://img.freepik.com/premium-vector/flat-golden-star-icon-universal-golden-star-icon-use-web-mobile-ui-isolated-vector-illustration_96318-19615.jpg" alt="Star">
+      <img src="https://img.freepik.com/premium-vector/flat-golden-star-icon-universal-golden-star-icon-use-web-mobile-ui-isolated-vector-illustration_96318-19615.jpg" alt="Star">
+      <span>(5.0)</span>
+    </div>
+
+    <div class="additional-content">
+      <p>Leo Das - Professional Driver<br/>
+
+        <br/><b>About Me:</b><br/>
+        Hello, I'm Leo Das, your dedicated and experienced driver committed to providing a safe and comfortable journey.<br/>
+        Experience: Over 5 years of professional driving experience.<br/>
+<br/><b>Vehicle Information:</b><br/>
+        
+        Model: Royal Enfield Classic 350<br/>
+        Color: Blue<br/>
+        License Plate: TN 00 0169<br/><br/>
+    <b>Customer Reviews:</b><br/>
+        
+        "Leo is always on time and provides a smooth ride. Highly recommended!"<br/>
+        "Courteous and professional. Made me feel safe throughout the entire journey."<br/>
+      
+    </div>
+    <button class="feedback-button" style="background-color: darkblue; color : #f0f0f0; font-size:25px ;border-radius: 5px;" onclick="openFeedbackForm()">Provide Feedback</button>
+  </div>
+  </div>
+  <script>
+    function openFeedbackForm() {
+      // You can implement the logic to open a feedback form or link to another page for feedback.
+      window.location.href='feed_back.html';
+    }
+  </script>
+</body>
+</html>

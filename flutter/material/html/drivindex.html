@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to VeloCity</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://t3.ftcdn.net/jpg/04/38/74/68/360_F_438746833_DNCKJKHjVOkNpqAxB4Ya04l4g0Dmmgyp.jpg') center/cover no-repeat fixed;
+            color: #fff;
+            text-align: center;
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        html, body {
+            height: 100%; /* Ensure background covers the entire viewport */
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        .welcome-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 60vh;
+        }
+
+        #velocity-heading {
+            font-size: 40px; /* Increase the font size for VeloCity */
+        }
+
+        .welcome-text {
+            font-size: 35px;
+            margin-bottom: 20px;
+            color: black;
+        }
+
+        .welcome-button {
+            background-color: #333;
+            color: white;
+            padding: 0.8em 1.5em;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            margin: 10px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 id="velocity-heading"><strong>Velo-City</strong></h1>
+        <h2> "For Drivers"</h2>
+    </header>
+
+    <div class="welcome-container">
+        <p class="welcome-text">Welcome to VeloCity! </p>
+        <p class="welcome-text"> Choose an option to get started:</p>
+        <a href="login2.html" class="welcome-button" style="width:20vh">Login</a>
+        <a href="signup2.html" class="welcome-button" style="width:20vh">Sign Up</a>
+    </div>
+
+</body>
+</html>
+

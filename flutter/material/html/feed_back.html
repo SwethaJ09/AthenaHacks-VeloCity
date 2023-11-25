@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ride Booking App Feedback</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    form {
+      background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for the form */
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      padding: 20px;
+      text-align: center;
+      background: url('https://img.freepik.com/free-vector/taxi-app-concept_23-2148484534.jpg') center/cover no-repeat fixed; /* Replace 'background_image.jpg' with your image file name *//* Replace 'your-feedback-background-image.jpg' with the actual path to your background image */
+    }
+    h2 {
+      color: #4CAF50;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #555;
+    }
+    input, textarea {
+      width: calc(100% - 16px);
+      padding: 10px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    input[type="number"] {
+      width: 50px;
+    }
+    textarea {
+      resize: vertical;
+    }
+    .stars {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    .stars input {
+      display: none;
+    }
+    .stars label {
+      font-size: 24px;
+      color: #9e9e9e;
+      margin: 0 4px;
+      cursor: pointer;
+      order: -1;
+    }
+    .stars input:checked ~ label {
+      color: #FFD700; /* Gold color */
+    }
+    .symbols {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    .symbols img {
+      width: 30px;
+      margin: 0 8px;
+    }
+    button {
+      background-color: #080808;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #0a0b0a;
+    }
+  </style>
+</head>
+<body>
+
+  <form action="/submit-feedback" method="post">
+    <h1>Feedback Form</h1>
+
+    <label for="rating"><strong>Rating:</strong></label>
+    <div class="stars">
+      <input type="radio" id="star1" name="rating" value="5" /><label for="star1">&#9733;</label>
+      <input type="radio" id="star2" name="rating" value="4" /><label for="star2">&#9733;</label>
+      <input type="radio" id="star3" name="rating" value="3" /><label for="star3">&#9733;</label>
+      <input type="radio" id="star4" name="rating" value="2" /><label for="star4">&#9733;</label>
+      <input type="radio" id="star5" name="rating" value="1" required/><label for="star5">&#9733;</label>
+    </div>
+
+    <label for="comments"><strong>Comments:</strong></label>
+    <textarea id="comments" name="comments" rows="4" required></textarea>
+
+    <button type="submit">Submit Feedback</button>
+  </form>
+
+</body>
+</html>
